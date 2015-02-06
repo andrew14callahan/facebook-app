@@ -17,6 +17,3 @@
 
 # Ignore Spring files.
 /spring/*.pid
-
-# Ignore Cloud 9 files.
-/.c9/*
