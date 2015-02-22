@@ -5,7 +5,14 @@
 		This application will interact with 
 		<a href="https://www.facebook.com/">facebook</a>.
 	</p>
-	<%= link_to "Sign into facebook", "#", class: "btn btn-lg btn-primary" %>
+
+	<% if current_user %>
+		Signed in as <strong><%= current_user.name %></strong>!
+		<%= link_to "Sign out", signout_path, id: "sign_out" %>
+	<% else %>
+		<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-lg btn-primary" %>
+	<% end %>
+
 </div>
 
 <%= link_to image_tag("george.jpg", title: "the force is strong with this one"),"http://starbeatacademy.ytmnd.com/" %>
